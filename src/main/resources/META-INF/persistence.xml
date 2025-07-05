@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="JTAPU" transaction-type="JTA">
+
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
         <jta-data-source>jiat_jdbc</jta-data-source>
         <!--        <non-jta-data-source>jiat_jdbc</non-jta-data-source>-->
         <!--        <properties>-->
@@ -14,6 +16,10 @@
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.engine.transaction.jta.platform.internal.SunOneJtaPlatform"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
+
+
     </persistence-unit>
 </persistence>
