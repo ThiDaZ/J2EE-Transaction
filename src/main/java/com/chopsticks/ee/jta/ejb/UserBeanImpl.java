@@ -27,7 +27,6 @@ public class UserBeanImpl implements UserBean {
 
         em.persist(user);
 
-
         return true;
     }
 }
